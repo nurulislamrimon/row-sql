@@ -10,9 +10,8 @@ const pool = mysql
   })
   .promise();
 
-const getStudents = async () => {
+export const getStudents = async () => {
   const result = await pool.query("SELECT * FROM students");
   const rows = result[0];
   return rows;
 };
-console.log(await getStudents());
